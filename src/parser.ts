@@ -1,9 +1,9 @@
-import { isString, type Guard, isNumber, isBoolean, isLiteral, isOneOf, isUndefined, isNull } from "./guards";
-import { Primitive } from "./types";
+import { isString, type Guard, isNumber, isBoolean, isLiteral, isOneOf, isUndefined, isNull, isEnum } from "./guards";
+import { EnumLike, Primitive } from "./types";
 
-type ParseSuccess<T> = { success: true; data: T };
-type ParseError = { success: false; error: Error };
-type ParseResult<T> = ParseSuccess<T> | ParseError;
+export type ParseSuccess<T> = { success: true; data: T };
+export type ParseError = { success: false; error: Error };
+export type ParseResult<T> = ParseSuccess<T> | ParseError;
 export type Parser<T> = {
   parse: (x: unknown) => ParseResult<T>;
 };
@@ -71,6 +71,7 @@ const p = {
   isOneOf: <U extends string | number, T extends readonly [U, ...U[]]>(val: T) => createParser(isOneOf(val), "oneof"),
   object: objectParser,
   optional: <T>(val: Parser<T>) => orParser(val, p.undefined()),
+  enum: <T extends EnumLike>(e: T) => createParser(isEnum(e), "enum"),
 };
 
 export { p };

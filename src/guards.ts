@@ -1,14 +1,9 @@
-import { Primitive, UnionToIntersection } from "./types";
+import { Primitive, UnionToIntersection, EnumLike } from "./types";
 
 export type Guard<T> = (x: unknown) => x is T;
 export type TypeOf<T> = T extends Guard<infer U> ? U : never;
 type PropertyGuards<A extends Record<string, unknown>> = {
   [K in keyof A]: Guard<A[K]>;
-};
-
-export declare type EnumLike = {
-  [k: string]: string | number;
-  [nu: number]: string;
 };
 
 const isString: Guard<string> = (x: unknown): x is string => typeof x == "string";
