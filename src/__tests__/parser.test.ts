@@ -11,3 +11,16 @@ test("parser", () => {
 
   expect(result.success).toBeTruthy();
 });
+
+test("optional", () => {
+  const parser = p.object({
+    name: p.string(),
+    age: p.number(),
+    role: p.isOneOf(["admin", "user"]),
+    address: p.optional(p.string()),
+  });
+
+  const result = parser.parse({ name: "John Doe", age: 25, role: "admin" });
+
+  expect(result.success).toBeTruthy();
+});
