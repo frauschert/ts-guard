@@ -6,7 +6,7 @@ Its inspired by zod but focusses only on type guards and is more lightweight.
 ## Usage
 
 ```typescript
-import { isObject } from 'ts-guard';
+import { isObject, isString, isNumber } from 'ts-guard';
 
 const isPerson = isObject({ name: isString, age: isNumber });
 const someValue = ...
