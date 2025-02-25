@@ -11,6 +11,7 @@ import { isUnion } from "./isUnion";
 import { isIntersection } from "./isIntersection";
 import { isOneOf } from "./isOneOf";
 import { isLiteral } from "./isLiteral";
+import { isDate } from "./isDate";
 
 import type { Guard, TypeOf } from "./types";
 
@@ -28,5 +29,6 @@ export {
   isIntersection,
   isOneOf,
   isLiteral,
+  isDate,
 };
 export type { Guard, TypeOf };
