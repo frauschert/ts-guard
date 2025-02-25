@@ -3,6 +3,12 @@
 ts-guard is a typescript library that provides composable type guards.
 Its inspired by zod but focusses only on type guards and is more lightweight.
 
+## Installation
+
+```bash
+npm install @frauschert/ts-guard
+```
+
 ## Usage
 
 ```typescript
