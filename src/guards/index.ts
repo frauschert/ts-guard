@@ -12,6 +12,7 @@ import { isIntersection } from "./isIntersection";
 import { isOneOf } from "./isOneOf";
 import { isLiteral } from "./isLiteral";
 import { isDate } from "./isDate";
+import { isInstanceOf } from "./isInstanceOf/isInstanceOf";
 
 import type { Guard, TypeOf } from "./types";
 
@@ -30,5 +31,6 @@ export {
   isOneOf,
   isLiteral,
   isDate,
+  isInstanceOf,
 };
 export type { Guard, TypeOf };
