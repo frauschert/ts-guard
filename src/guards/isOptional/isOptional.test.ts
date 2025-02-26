@@ -1,4 +1,4 @@
-import { isString } from "../isString";
+import { isString } from "../isString/isString";
 import { isOptional } from "./isOptional";
 
 describe("isOneOf", () => {

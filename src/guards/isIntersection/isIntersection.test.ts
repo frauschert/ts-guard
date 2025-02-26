@@ -1,7 +1,7 @@
 import { isIntersection } from "./isIntersection";
-import { isObject } from "../isObject";
-import { isString } from "../isString";
-import { isNumber } from "../isNumber";
+import { isObject } from "../isObject/isObject";
+import { isString } from "../isString/isString";
+import { isNumber } from "../isNumber/isNumber";
 
 describe("isIntersection", () => {
   test("should return true", () => {

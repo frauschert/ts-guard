@@ -1,5 +1,5 @@
 import { Guard } from "../types";
-import { isUndefined } from "../isUndefined";
+import { isUndefined } from "../isUndefined/isUndefined";
 
 const isOptional =
   <T>(guard: Guard<T>) =>

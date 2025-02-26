@@ -1,4 +1,4 @@
-import { isNull } from "../isNull";
+import { isNull } from "../isNull/isNull";
 import { Guard } from "../types";
 
 type PropertyGuards<A extends Record<string, unknown>> = {

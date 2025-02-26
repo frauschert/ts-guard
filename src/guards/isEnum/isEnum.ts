@@ -1,7 +1,7 @@
 import { EnumLike } from "../../types";
-import { isNumber } from "../isNumber";
-import { isString } from "../isString";
-import { isUnion } from "../isUnion";
+import { isNumber } from "../isNumber/isNumber";
+import { isString } from "../isString/isString";
+import { isUnion } from "../isUnion/isUnion";
 import { Guard } from "../types";
 
 export function isEnum<T extends EnumLike>(e: T): Guard<T[keyof T]> {

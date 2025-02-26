@@ -1,5 +1,5 @@
 import { isNumber } from "../../guards";
-import { isString } from "../isString";
+import { isString } from "../isString/isString";
 import { isUnion } from "./isUnion";
 
 describe("isUnion", () => {
