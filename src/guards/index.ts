@@ -13,6 +13,7 @@ import { isOneOf } from "./isOneOf";
 import { isLiteral } from "./isLiteral";
 import { isDate } from "./isDate";
 import { isInstanceOf } from "./isInstanceOf/isInstanceOf";
+import { isBigInt } from "./isBigInt/isBigInt";
 
 import type { Guard, TypeOf } from "./types";
 
@@ -32,5 +33,6 @@ export {
   isLiteral,
   isDate,
   isInstanceOf,
+  isBigInt,
 };
 export type { Guard, TypeOf };
