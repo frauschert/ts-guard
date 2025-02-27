@@ -34,12 +34,17 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      # Step 4: Run your test suite (using the "test" script from package.json)
+      # Step 4: Build the package
+      # This ensures the package is properly built before running tests and publishing.
+      - name: Build package
+        run: npm run build
+
+      # Step 5: Run your test suite (using the "test" script from package.json)
       # If tests fail, the workflow will stop here and not publish a broken version.
       - name: Run tests
         run: npm test
 
-      # Step 5: Update package.json to match the release tag
+      # Step 6: Update package.json to match the release tag
       # The release tag (e.g., v1.0.1) is extracted, and npm version sets package.json version accordingly.
       # The --no-git-tag-version flag ensures npm doesn't create its own tags.
       # This step keeps package.json's version aligned with the release tag you just created.
@@ -49,7 +54,7 @@ jobs:
           echo "Updating package.json version to $TAG"
           npm version "$TAG" --no-git-tag-version
           
-      # Step 6: Commit and push the updated package.json and package-lock.json back to the repo
+      # Step 7: Commit and push the updated package.json and package-lock.json back to the repo
       # This ensures your repository always reflects the exact version published.
       # We use the GITHUB_TOKEN to authenticate and the granted write permissions to push changes.
       - name: Commit and push version update
@@ -63,7 +68,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      # Step 7: Publish the new version to npm
+      # Step 8: Publish the new version to npm
       # The NODE_AUTH_TOKEN is your npm access token stored as a secret.
       # npm publish --access public makes the package available to anyone on npm.
       - name: Publish to npm
