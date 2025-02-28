@@ -13,6 +13,7 @@ import { isObject } from "./isObject/isObject";
 import { isOneOf } from "./isOneOf/isOneOf";
 import { isOptional } from "./isOptional/isOptional";
 import { isRecord } from "./isRecord/isRecord";
+import { isSet } from "./isSet/isSet";
 import { isString } from "./isString/isString";
 import { isUndefined } from "./isUndefined/isUndefined";
 import { isUnion } from "./isUnion/isUnion";
@@ -35,9 +36,9 @@ export {
   isOneOf,
   isOptional,
   isRecord,
+  isSet,
   isString,
   isUndefined,
-  isUnion
+  isUnion,
 };
 export type { Guard, TypeOf };
-
