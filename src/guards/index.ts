@@ -6,6 +6,7 @@ import { isEnum } from "./isEnum/isEnum";
 import { isInstanceOf } from "./isInstanceOf/isInstanceOf";
 import { isIntersection } from "./isIntersection/isIntersection";
 import { isLiteral } from "./isLiteral/isLiteral";
+import { isMap } from "./isMap/isMap";
 import { isNull } from "./isNull/isNull";
 import { isNumber } from "./isNumber/isNumber";
 import { isObject } from "./isObject/isObject";
@@ -19,7 +20,24 @@ import { isUnion } from "./isUnion/isUnion";
 import type { Guard, TypeOf } from "./types";
 
 export {
-  isArrayOf, isBigInt, isBoolean, isDate, isEnum, isInstanceOf, isIntersection, isLiteral, isNull, isNumber, isObject, isOneOf, isOptional, isRecord, isString, isUndefined, isUnion
+  isArrayOf,
+  isBigInt,
+  isBoolean,
+  isDate,
+  isEnum,
+  isInstanceOf,
+  isIntersection,
+  isLiteral,
+  isMap,
+  isNull,
+  isNumber,
+  isObject,
+  isOneOf,
+  isOptional,
+  isRecord,
+  isString,
+  isUndefined,
+  isUnion
 };
 export type { Guard, TypeOf };
 
