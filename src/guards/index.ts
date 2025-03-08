@@ -15,6 +15,7 @@ import { isOptional } from "./isOptional/isOptional";
 import { isRecord } from "./isRecord/isRecord";
 import { isSet } from "./isSet/isSet";
 import { isString } from "./isString/isString";
+import { isTuple } from "./isTuple/isTuple";
 import { isUndefined } from "./isUndefined/isUndefined";
 import { isUnion } from "./isUnion/isUnion";
 
@@ -38,6 +39,7 @@ export {
   isRecord,
   isSet,
   isString,
+  isTuple,
   isUndefined,
   isUnion,
 };
