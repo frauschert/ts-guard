@@ -4,6 +4,24 @@
   "description": "ts-guard is a typescript library that provides composable type guards.\r Its inspired by zod but focusses only on type guards and is more lightweight.",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./primitive": {
+      "types": "./lib/guards/primitive.d.ts",
+      "default": "./lib/guards/primitive.js"
+    },
+    "./compound": {
+      "types": "./lib/guards/compound.d.ts",
+      "default": "./lib/guards/compound.js"
+    },
+    "./node": {
+      "types": "./lib/guards/node.d.ts",
+      "default": "./lib/guards/node.js"
+    }
+  },
   "files": [
     "lib/**/*"
   ],
@@ -44,5 +62,6 @@
   "bugs": {
     "url": "https://github.com/frauschert/ts-guard/issues"
   },
-  "homepage": "https://github.com/frauschert/ts-guard#readme"
+  "homepage": "https://github.com/frauschert/ts-guard#readme",
+  "sideEffects": false
 }

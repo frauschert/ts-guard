@@ -1,0 +1,1 @@
+export { isBuffer } from './isBuffer/isBuffer';

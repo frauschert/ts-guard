@@ -1,0 +1,15 @@
+export { isArrayOf } from './isArrayOf/isArrayOf';
+export { isDate } from './isDate/isDate';
+export { isEnum } from './isEnum/isEnum';
+export { isInstanceOf } from './isInstanceOf/isInstanceOf';
+export { isIntersection } from './isIntersection/isIntersection';
+export { isLiteral } from './isLiteral/isLiteral';
+export { isMap } from './isMap/isMap';
+export { isObject } from './isObject/isObject';
+export { isOneOf } from './isOneOf/isOneOf';
+export { isOptional } from './isOptional/isOptional';
+export { isPromise } from './isPromise/isPromise';
+export { isRecord } from './isRecord/isRecord';
+export { isSet } from './isSet/isSet';
+export { isTuple } from './isTuple/isTuple';
+export { isUnion } from './isUnion/isUnion';

@@ -15,7 +15,7 @@ npm install @frauschert/ts-guard
 - 💡 First-class type inference
 - 🔒 Runtime type checking
 - 🧩 Composable guards
-- 🪶 Lightweight
+- 🪶 Lightweight with treeshaking support
 - 📘 Well documented
 
 ## Basic Usage
@@ -32,10 +32,27 @@ if (isPerson(value)) {
 }
 ```
 
+## Optimizing Bundle Size
+
+The library provides several entry points to help you optimize your bundle size:
+
+```typescript
+// Import only primitive type guards
+import { isString, isNumber } from '@frauschert/ts-guard/primitive';
+
+// Import only compound type guards
+import { isObject, isArray } from '@frauschert/ts-guard/compound';
+
+// Import Node.js specific guards (only in Node.js environment)
+import { isBuffer } from '@frauschert/ts-guard/node';
+```
+
 ## Available Guards
 
 ### Primitive Types
 ```typescript
+import { isString, isNumber, isBoolean, isBigInt } from '@frauschert/ts-guard/primitive';
+
 isString({ minLength: 3, maxLength: 10, pattern: /^[A-Z]/, trim: true })
 isNumber({ min: 0, max: 100, integer: true, positive: true })
 isBoolean()
@@ -44,6 +61,8 @@ isBigInt({ min: 0n, max: 100n, positive: true })
 
 ### Complex Types
 ```typescript
+import { isDate, isArrayOf, isObject, isInstanceOf } from '@frauschert/ts-guard/compound';
+
 isDate()
 isArrayOf(isString())
 isObject({ name: isString(), age: isNumber() })
@@ -52,6 +71,8 @@ isInstanceOf(MyClass)
 
 ### Type Composition
 ```typescript
+import { isUnion, isIntersection, isEnum, isOptional, isOneOf } from '@frauschert/ts-guard/compound';
+
 // Union types
 const isStringOrNumber = isUnion([isString(), isNumber()]);
 
@@ -69,6 +90,14 @@ const isOptionalString = isOptional(isString());
 
 // Literal values
 const isRole = isOneOf(['admin', 'user', 'guest']);
+```
+
+### Node.js Specific Types
+```typescript
+import { isBuffer } from '@frauschert/ts-guard/node';
+
+// Only available in Node.js environment
+isBuffer()
 ```
 
 ## Type Inference

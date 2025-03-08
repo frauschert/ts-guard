@@ -12,10 +12,23 @@
     "declarationMap": true,                              /* Create sourcemaps for d.ts files. */
     "sourceMap": true,                                   /* Create source map files for emitted JavaScript files. */
     "removeComments": true,                              /* Disable emitting comments. */
-    "importHelpers": false,                               /* Allow importing helper functions from tslib once per project. */
+    "importHelpers": false,                              /* Allow importing helper functions from tslib once per project. */
     "incremental": true,                                 /* Enable incremental compilation. */
 
-    "types": ["jest", "node"]
+    "types": ["jest", "node"],
+
+    // Added optimizations
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "isolatedModules": true,
+
+    "baseUrl": ".",
+    "paths": {
+      "@guards/*": ["src/guards/*"],
+      "@types": ["src/types"]
+    }
   },
   "include": [
     "./src"
