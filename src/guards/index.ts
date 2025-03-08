@@ -1,6 +1,7 @@
 import { isArrayOf } from "./isArrayOf/isArrayOf";
 import { isBigInt } from "./isBigInt/isBigInt";
 import { isBoolean } from "./isBoolean/isBoolean";
+import { isBuffer } from "./isBuffer/isBuffer";
 import { isDate } from "./isDate/isDate";
 import { isEnum } from "./isEnum/isEnum";
 import { isInstanceOf } from "./isInstanceOf/isInstanceOf";
@@ -27,6 +28,7 @@ export {
   isArrayOf,
   isBigInt,
   isBoolean,
+  isBuffer,
   isDate,
   isEnum,
   isInstanceOf,
