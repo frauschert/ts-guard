@@ -16,6 +16,7 @@ import { isPromise } from "./isPromise/isPromise";
 import { isRecord } from "./isRecord/isRecord";
 import { isSet } from "./isSet/isSet";
 import { isString } from "./isString/isString";
+import { isSymbol } from "./isSymbol/isSymbol";
 import { isTuple } from "./isTuple/isTuple";
 import { isUndefined } from "./isUndefined/isUndefined";
 import { isUnion } from "./isUnion/isUnion";
@@ -41,6 +42,7 @@ export {
   isRecord,
   isSet,
   isString,
+  isSymbol,
   isTuple,
   isUndefined,
   isUnion,
