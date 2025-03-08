@@ -12,6 +12,7 @@ import { isNumber } from "./isNumber/isNumber";
 import { isObject } from "./isObject/isObject";
 import { isOneOf } from "./isOneOf/isOneOf";
 import { isOptional } from "./isOptional/isOptional";
+import { isPromise } from "./isPromise/isPromise";
 import { isRecord } from "./isRecord/isRecord";
 import { isSet } from "./isSet/isSet";
 import { isString } from "./isString/isString";
@@ -36,6 +37,7 @@ export {
   isObject,
   isOneOf,
   isOptional,
+  isPromise,
   isRecord,
   isSet,
   isString,
