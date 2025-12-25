@@ -16,3 +16,4 @@ export { isRegExp } from "./isRegExp/isRegExp";
 export { isSet } from "./isSet/isSet";
 export { isTuple } from "./isTuple/isTuple";
 export { isUnion } from "./isUnion/isUnion";
+export { isURL } from "./isURL/isURL";
