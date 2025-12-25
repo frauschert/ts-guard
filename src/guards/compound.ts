@@ -1,5 +1,7 @@
+export { isArray } from "./isArray/isArray";
 export { isArrayOf } from "./isArrayOf/isArrayOf";
 export { isDate } from "./isDate/isDate";
+export { isDefined } from "./isDefined/isDefined";
 export { isEmail } from "./isEmail/isEmail";
 export { isEnum } from "./isEnum/isEnum";
 export { isError } from "./isError/isError";
