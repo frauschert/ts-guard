@@ -11,6 +11,7 @@ export { isOneOf } from "./isOneOf/isOneOf";
 export { isOptional } from "./isOptional/isOptional";
 export { isPromise } from "./isPromise/isPromise";
 export { isRecord } from "./isRecord/isRecord";
+export { isRegExp } from "./isRegExp/isRegExp";
 export { isSet } from "./isSet/isSet";
 export { isTuple } from "./isTuple/isTuple";
 export { isUnion } from "./isUnion/isUnion";
