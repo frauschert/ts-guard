@@ -7,6 +7,7 @@ on:
 
 # Grant write permissions to the repository contents so we can push version updates
 permissions:
+  id-token: write  # Required for OIDC
   contents: write
 
 jobs:
@@ -51,8 +52,13 @@ jobs:
       - name: Update package.json with release tag
         run: |
           TAG="${{ github.event.release.tag_name }}"
-          echo "Updating package.json version to $TAG"
-          npm version "$TAG" --no-git-tag-version
+          CURRENT_VERSION=$(node -p "require('./package.json').version")
+          if [ "v$CURRENT_VERSION" != "$TAG" ]; then
+            echo "Updating package.json version from $CURRENT_VERSION to $TAG"
+            npm version "$TAG" --no-git-tag-version
+          else
+            echo "package.json version $CURRENT_VERSION already matches tag $TAG, skipping update"
+          fi
           
       # Step 7: Commit and push the updated package.json and package-lock.json back to the repo
       # This ensures your repository always reflects the exact version published.
@@ -60,18 +66,18 @@ jobs:
       - name: Commit and push version update
         run: |
           TAG="${{ github.event.release.tag_name }}"
-          git config user.name "github-actions"
-          git config user.email "github-actions@github.com"
-          git add package.json package-lock.json
-          git commit -m "Update package.json to version $TAG"
-          git push origin ${{ github.event.repository.default_branch }}
+          if git diff --quiet package.json package-lock.json; then
+            echo "No changes to package.json or package-lock.json, skipping commit"
+          else
+            git config user.name "github-actions"
+            git config user.email "github-actions@github.com"
+            git add package.json package-lock.json
+            git commit -m "Update package.json to version $TAG"
+            git push origin ${{ github.event.repository.default_branch }}
+          fi
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       # Step 8: Publish the new version to npm
-      # The NODE_AUTH_TOKEN is your npm access token stored as a secret.
-      # npm publish --access public makes the package available to anyone on npm.
       - name: Publish to npm
-        run: npm publish --access public
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: npm publish
