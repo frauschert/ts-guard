@@ -1,6 +1,7 @@
 export { isArrayOf } from "./isArrayOf/isArrayOf";
 export { isDate } from "./isDate/isDate";
 export { isEnum } from "./isEnum/isEnum";
+export { isError } from "./isError/isError";
 export { isFunction } from "./isFunction/isFunction";
 export { isInstanceOf } from "./isInstanceOf/isInstanceOf";
 export { isIntersection } from "./isIntersection/isIntersection";
